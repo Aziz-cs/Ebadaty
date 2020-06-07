@@ -1,0 +1,94 @@
+<resources>
+    <string name="app_name">عبادتى</string>
+
+    <!--Main Screen  -->
+    <string name="new_record">تقرير جديد</string>
+    <string name="how_to">عن البرنامج</string>
+    <string name="fada2el">فضائل العبادات</string>
+    <string name="exit">خروج</string>
+
+    <!--About  -->dialog_howto_title
+    <string name="howto_title">كيفية الإستخدام</string>
+    <string name="positive_button">رجـوع</string>
+    <!--Preferences  -->
+    <string name="save_confirm">تم حفظ البيانات لهذا اليوم</string>
+    <string name="save">حفظ اليبانات</string>
+    <string name="mu_cancel">إلغاء التقرير الحالى</string>
+    <string-array name="report_names">
+        <item>الصلاة فى جماعة</item>
+        <item>السنن الرواتب</item>
+        <item>قيام الليل</item>
+        <item>الوتر</item>
+        <item>الضحى</item>
+        <item>قراءة القرآن</item>
+        <item>حفظ/مراجعة القرآن</item>
+        <item>أذكار الصباح والمساء</item>
+        <item>أذكار النوم والاستيقاظ</item>
+        <item>أذكار بعض الصلاة المفروضة</item>
+        <item>الصيام</item>
+    </string-array>
+
+    <!--Report Categories  -->
+    <string name="category_salah">الصلاة</string>
+    <string name="category_sawm">الصوم</string>
+    <string name="category_quran">القرآن الكريم</string>
+    <string name="category_zekr">ذكر الله</string>
+
+    <!--Report prefs items  -->
+    <string name="fadl">فضل</string>
+    <!--Salah -->
+    <string name="row1_salah_gama3a">الصلاة فى جماعة</string>
+    <string name="row1_salah_gama3aSummary">هل صليت جماعة فى المسجد؟</string>
+
+    <string name="row2_salah_sunna">السنن الرواتب</string>
+    <string name="row2_salah_sunnaSummary">هل صليت صلاة السنة اليوم؟</string>
+
+    <string name="row3_salah_qeyam">قيام الليل</string>
+    <string name="row3_salah_qeyamSummary">هل قمت من الليل؟</string>
+
+    <string name="row4_salah_wetr">الوتر</string>
+    <string name="row4_salah_wetrSummary">هل صليت صلاة الوتر؟</string>
+
+    <string name="row5_salah_doha">الضحى</string>
+    <string name="row5_salah_dohaSummary">هل صليت صلاة الضحى؟</string>
+
+    <!--Quran  -->
+    <string name="row6_quran_qera2a">قرأءة القرآن</string>
+    <string name="row6_quran_qera2aSummary">هل قرأت وردك فى كتاب الله اليوم؟</string>
+
+    <string name="row7_quran_7efz">حفظ/مراجعة القرآن</string>
+    <string name="row7_quran_7efzSummary">هل قمت بحفظ/ماراجعة جزء من القرآن الكريم؟</string>
+
+    <!--Zekr  -->
+    <string name="row8_zekr_saba7_masa2">أذكار الصباح والمساء</string>
+    <string name="row8_zekr_saba7_masa2Summary">هل قلت أذكار الصباح والمساء اليوم؟</string>
+
+    <string name="row9_zekr_estykaz_nom">أذكار النوم والاستيقاظ</string>
+    <string name="row9_zekr_estykaz_nomSummary">هل قلت أذكار االنوم والاستيقاظ اليوم؟</string>
+
+    <string name="row10_zekr_afterSalah">أذكار بعض الصلاة المفروضة</string>
+    <string name="row10_zekr_afterSalahSummary">هل قلت الاذكار بعد الصلاة المفروضة؟</string>
+
+    <!--Siam  -->
+    <string name="row11_sawm">الصيام</string>
+    <string name="row11_sawmSummary">هل صمت يوما فى هذ الاسيوع؟</string>
+
+    <!--Tab Settings  -->
+    <string name="tab_fadl">فضل العباده</string>
+    <string name="tab_feqh">فقه العباده</string>
+    <string name="title_nom">أذكار النوم</string>
+    <string name="title_estykaz">أذكار الاستقياظ</string>
+
+    <!--Dialog Settings  -->
+    <string name="report_time">أختر وقت لملئ التقرير</string>
+    <string name="report_days">أختر عدد الأيام لعمل التقرير</string>
+    <string name="report_created">تم عمل التقرير بنجاح، وسيتم التنبيه لملئ السجل فى الوقت الذى تم تحديده</string>
+    <string name="dialog_title">ضبط إعدادات التقرير</string>
+    <string name="ok">موافق</string>
+    <string name="cancel">إلغاء</string>
+    <string-array name="sp_days">
+        <item>ثلاث أيام</item>
+        <item>خمس أيام</item>
+        <item>اسبوع</item>
+    </string-array>
+</resources>
