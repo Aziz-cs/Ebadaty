@@ -60,7 +60,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         b.setIcon(android.R.drawable.ic_dialog_info);
         b.setView(dialoglayout);
         //spinner
-        Spinner spinner = (Spinner) dialoglayout.findViewById(R.id.sp_days);
+        Spinner spinner = dialoglayout.findViewById(R.id.sp_days);
         // Create an ArrayAdapter using the string array and a default spinner layout
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.sp_days, android.R.layout.simple_spinner_item);
         // Specify the layout to use when the list of choices appears
@@ -69,7 +69,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         spinner.setAdapter(adapter);
 
         //================
-        TimePicker timerPicker = (TimePicker) dialoglayout.findViewById(R.id.timer_reportTime);
+        TimePicker timerPicker =  dialoglayout.findViewById(R.id.timer_reportTime);
 
         b.setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
 
