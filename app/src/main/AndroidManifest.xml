@@ -21,6 +21,9 @@
         <activity android:name="islamic.ebadaty.WorshipRewardContent"/>
         <activity android:name="islamic.ebadaty.WorshipRewardOnly"/>
 
+        <receiver android:name=".utils.ReportAlarmReceiver" />
+        <receiver android:name=".utils.ReportBootReceiver" />
+
     </application>
 
 </manifest>

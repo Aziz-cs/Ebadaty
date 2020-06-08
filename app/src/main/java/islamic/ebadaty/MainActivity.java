@@ -1,11 +1,18 @@
 package islamic.ebadaty;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.AlarmManager;
 import android.app.AlertDialog;
+import android.app.PendingIntent;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,11 +21,20 @@ import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.TimePicker;
 
+import java.util.Calendar;
+
+import islamic.ebadaty.utils.ReportAlarmReceiver;
+
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     Button reportBtn, fada2elBtn, aboutBtn;
     public int SelectedDaysSpinner;
     public int UserSelectedDays;
+    public static final String TAG = "ReportEB";
+    SharedPreferences defaultPrefs;
+    int selectedHour, selectedMin;
+    public static AlarmManager alarmMgr;
+    public static PendingIntent alarmIntent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,12 +86,26 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         //================
         TimePicker timerPicker =  dialoglayout.findViewById(R.id.timer_reportTime);
+        timerPicker.setOnTimeChangedListener(new TimePicker.OnTimeChangedListener() {
+            @Override
+            public void onTimeChanged(TimePicker view, int hourOfDay, int minute) {
+                selectedHour = hourOfDay;
+                selectedMin = minute;
+            }
+        });
+
+
+
+
 
         b.setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
 
             public void onClick(DialogInterface dialog, int which) {
                 // TODO Auto-generated method stub
                 //Starting service
+                Log.d(TAG, "openNewReport: Hour: " + selectedHour);
+                Log.d(TAG, "openNewReport: Min: " + selectedMin);
+
 
                 switch (SelectedDaysSpinner){
                     case 0:
@@ -89,7 +119,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         break;
                 }
 
-
+            setAlarmOn(getApplicationContext(), selectedHour, selectedMin);
 
             }
         });
@@ -102,6 +132,36 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         });
         AlertDialog alert = b.create();
         alert.show();
+
+    }
+
+    public void setAlarmOn(Context context, int selectedHour, int selectedMin) {
+        Log.d(TAG, "setAlarmOn: ");
+        alarmMgr = (AlarmManager)context.getSystemService(Context.ALARM_SERVICE);
+        Intent intent = new Intent(context, ReportAlarmReceiver.class);
+        alarmIntent = PendingIntent.getBroadcast(context, 0, intent, 0);
+
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTimeInMillis(System.currentTimeMillis());
+//        Log.d(TAG, "MainActivity Hour > " + selectedHour);
+//        Log.d(TAG, "MainActivity Min  > " + selectedMin);
+
+        calendar.set(Calendar.HOUR_OF_DAY, selectedHour);
+        calendar.set(Calendar.MINUTE, selectedMin);
+
+
+        alarmMgr.setInexactRepeating(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(),
+                1 * 1000 * 60, alarmIntent);
+    }
+
+    public void cancelAlarm(Context context){
+        //      Log.d(TAG, "toggle > false > AM else block");
+        alarmMgr = (AlarmManager)context.getSystemService(Context.ALARM_SERVICE);
+        Intent intent = new Intent(context, ReportAlarmReceiver.class);
+        alarmIntent = PendingIntent.getBroadcast(context, 0, intent, 0);
+        alarmMgr.cancel(alarmIntent);
+        alarmIntent.cancel();
+        //       Log.d(TAG, "toggle > false >  AM !null");
 
     }
 }
