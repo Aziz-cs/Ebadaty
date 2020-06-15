@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <!--Salah  -->
+    <PreferenceCategory
+        android:title="@string/category_salah">
+   		 <CheckBoxPreference
+        android:key="row1_salah_gama3a"
+        android:title="@string/row1_salah_gama3a"
+        android:summary="@string/row1_salah_gama3aSummary"/>
+
+        <CheckBoxPreference
+        android:key="row2_salah_sunna"
+        android:title="@string/row2_salah_sunna"
+        android:summary="@string/row2_salah_sunnaSummary"/> 
+        
+        <CheckBoxPreference
+        android:key="row3_salah_qeyam"
+        android:title="@string/row3_salah_qeyam"
+        android:summary="@string/row3_salah_qeyamSummary"/> 
+       
+        <CheckBoxPreference
+        android:key="row4_salah_wetr"
+        android:title="@string/row4_salah_wetr"
+        android:summary="@string/row4_salah_wetrSummary"/>         
+        
+        <CheckBoxPreference
+        android:key="row5_salah_doha"
+        android:title="@string/row5_salah_doha"
+        android:summary="@string/row5_salah_dohaSummary"/>         
+        </PreferenceCategory>
+     
+      <!--Quran  -->
+     <PreferenceCategory
+      	android:title="@string/category_quran">
+	    <CheckBoxPreference
+	        android:key="row6_quran_qera2a"
+	        android:title="@string/row6_quran_qera2a"
+	        android:summary="@string/row6_quran_qera2aSummary"/>
+	    
+    	    <CheckBoxPreference
+        android:key="row7_quran_hefz"
+        android:title="@string/row7_quran_7efz"
+        android:summary="@string/row7_quran_7efzSummary"/>
+    	    
+      </PreferenceCategory>
+      
+      <!--Zekr  -->
+      <PreferenceCategory
+      	android:title="@string/category_zekr">
+    	          
+	     <CheckBoxPreference
+	        android:key="row8_zekr_saba7_masa2"
+	        android:title="@string/row8_zekr_saba7_masa2"
+	        android:summary="@string/row8_zekr_saba7_masa2Summary"/>
+	     
+	     <CheckBoxPreference
+	        android:key="row9_zekr_nom_estykaz"
+	        android:title="@string/row9_zekr_estykaz_nom"
+	        android:summary="@string/row9_zekr_estykaz_nomSummary"/>
+	     
+	      <CheckBoxPreference
+	        android:key="row10_zekr_afterSalah"
+	        android:title="@string/row10_zekr_afterSalah"
+	        android:summary="@string/row10_zekr_afterSalahSummary"/>
+	       </PreferenceCategory>
+	     
+      <!--Sawm  --> 
+     <PreferenceCategory
+	    android:title="@string/category_sawm">
+        <CheckBoxPreference
+        android:key="row11_sawm"
+        android:title="@string/row11_sawm"
+        android:summary="@string/row11_sawmSummary"/>
+      </PreferenceCategory>
+      
+          <PreferenceCategory
+	    android:title="لحفظ البيانات رجاء الضغظ على زر القائمة ثم اختيار (حفظ البيناتات)">
+        </PreferenceCategory>
+
+</PreferenceScreen>

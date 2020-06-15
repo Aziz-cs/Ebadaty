@@ -72,6 +72,12 @@
     <!--Siam  -->
     <string name="row11_sawm">الصيام</string>
     <string name="row11_sawmSummary">هل صمت يوما فى هذ الاسيوع؟</string>
+    <string name="makeNewReport">عمل تقرير جديد</string>
+    <string name="report_finished">عبـــــادتى - تم عمل التقرير بنجاح</string>
+    <string name="report_view">اضغط هنا لترى نتائج تقريرك</string>
+
+    <!--Report results-->
+    <string name="resultsToast">رجاء الضغط على العباده إذا كان فيها تقصير لتقرأ عن فضلها</string>
 
     <!--Tab Settings  -->
     <string name="tab_fadl">فضل العباده</string>

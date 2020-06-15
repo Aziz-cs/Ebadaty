@@ -24,6 +24,7 @@
         <receiver android:name=".utils.ReportAlarmReceiver" />
         <receiver android:name=".utils.ReportBootReceiver" />
 
+        <activity android:name=".ReportResults" />
     </application>
 
 </manifest>

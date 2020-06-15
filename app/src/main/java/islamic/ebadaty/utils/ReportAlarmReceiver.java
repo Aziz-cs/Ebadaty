@@ -22,6 +22,7 @@ import java.util.Calendar;
 
 import islamic.ebadaty.MainActivity;
 import islamic.ebadaty.R;
+import islamic.ebadaty.ReportResults;
 
 
 public class ReportAlarmReceiver extends BroadcastReceiver {
@@ -40,7 +41,7 @@ public class ReportAlarmReceiver extends BroadcastReceiver {
         Log.d(TAG, "Report onReceive");
         mContext = context;
  //       setPrefValues();
-
+        showNotification("Hello", "test Ebadaty", context);
     }
 
 
@@ -64,11 +65,11 @@ public class ReportAlarmReceiver extends BroadcastReceiver {
 
 
 
-    public void showNotification(String aSiamReminder, String aReason, Context context) {
+    public void showNotification(String notificationHeadline, String notificationSubtitle, Context context) {
    //     Log.d(TAG, "showNotification ");
 
 
-        String shareText = aSiamReminder + " - " + aReason + ".\n" +
+        String shareText = notificationHeadline + " - " + notificationSubtitle + ".\n" +
                             "تم التذكير بواسطة تطبيق (منبه الصيام) متوفر فى جوجل بلاي:" + "\n" +
                             "https://play.google.com/store/apps/details?id=iLighTech.Siam";
         Intent intentShare = new Intent();
@@ -77,7 +78,7 @@ public class ReportAlarmReceiver extends BroadcastReceiver {
         intentShare.setType("text/plain");
         Intent shareIntent = Intent.createChooser(intentShare, null);
 
-        Intent intentMain = new Intent(mContext, MainActivity.class);
+        Intent intentMain = new Intent(mContext, ReportResults.class);
 
         shareIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         intentMain.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
@@ -89,10 +90,10 @@ public class ReportAlarmReceiver extends BroadcastReceiver {
 
         builder = new NotificationCompat.Builder(mContext, CHANNEL_ID)
                 .setSmallIcon(R.drawable.ic_launcher_ebadaty)
-                .setContentTitle(aSiamReminder)
+                .setContentTitle(notificationHeadline)
                 .setDefaults(Notification.DEFAULT_ALL)
-                .setTicker(aSiamReminder)
-                .setContentText(aReason)
+                .setTicker(notificationHeadline)
+                .setContentText(notificationSubtitle)
 //                .setVibrate(new long[]{ 600, 1000, 600})
                 .setContentIntent(pendingIntentMain)
                 .setWhen(System.currentTimeMillis())
